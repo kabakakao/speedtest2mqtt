@@ -42,9 +42,9 @@ while true; do
 
     echo "Publishing stats..."
     echo -e "Ping: $ping ms\nDownload: $download Mbps\nUpload: $upload Mbps"
-    eval "$MOSQUITTO_PUB_CMD -t '$MQTT_TOPICPREFIX/download/state' -m '$download'"
-    eval "$MOSQUITTO_PUB_CMD -t '$MQTT_TOPICPREFIX/upload/state' -m '$upload'"
-    eval "$MOSQUITTO_PUB_CMD -t '$MQTT_TOPICPREFIX/ping/state' -m '$ping'"
+    eval "$MOSQUITTO_PUB_CMD -t '$MQTT_TOPICPREFIX/download' -m '$download'"
+    eval "$MOSQUITTO_PUB_CMD -t '$MQTT_TOPICPREFIX/upload' -m '$upload'"
+    eval "$MOSQUITTO_PUB_CMD -t '$MQTT_TOPICPREFIX/ping' -m '$ping'"
 
     echo "Sleeping for $SPEEDTEST_LOOKUPINTERVAL seconds"
     sleep $SPEEDTEST_LOOKUPINTERVAL
